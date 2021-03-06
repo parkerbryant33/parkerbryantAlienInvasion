@@ -4,8 +4,7 @@ import pygame
 
 from settings import Settings
 
-form ship import Ship
-
+from ship import Ship
 
 
 class AlienInvasion:
@@ -19,7 +18,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
-        self.screen = pygame.display.set_mode((1200, 800))
+        self.screen = pygame.display.set_mode((600, 400))
 
         pygame.display.set_caption("Alien Invasion")
 
