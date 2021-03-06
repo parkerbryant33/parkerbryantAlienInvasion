@@ -1,1 +1,3 @@
-print("test git")
+import pygame
+
+print(pygame.ver)
