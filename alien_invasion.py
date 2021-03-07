@@ -23,7 +23,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
-        self.screen = pygame.display.set_mode((600, 400))
+        self.screen = pygame.display.set_mode((1200, 800))
 
         pygame.display.set_caption("Alien Invasion")
 
