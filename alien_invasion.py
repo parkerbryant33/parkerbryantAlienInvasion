@@ -43,10 +43,11 @@ class AlienInvasion:
             self._check_events()
             # Watch for keyboard and mouse events.
             self.ship.update()
-            # self.bullets.update()
+            self.bullets.update()
             # Get rid of bullets that have disappeared.
             self._update_bullets()
             self._update_screen()
+            # Bullet.update(self)
             # Redraw the screen during each pass through the loop.
 
     def _check_events(self):
