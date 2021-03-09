@@ -25,7 +25,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
-        self.screen = pygame.display.set_mode((900, 600))
+        self.screen = pygame.display.set_mode((1200, 600))
 
         pygame.display.set_caption("Alien Invasion")
 
@@ -93,6 +93,9 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
+        # Check for any bullets that have hit aliens.
+        #   If so, get rid of the bullet and the alien.
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
@@ -155,7 +158,11 @@ class AlienInvasion:
     # self.screen.fill(self.settings.bg_color)
     # self.ship.blitme()
     def _update_aliens(self):
-        """Update the positions of all aliens in the fleet."""
+        """
+        Check if the fleet is at an edge,
+          then update the positions of all aliens in the fleet.
+        """
+        self._check_fleet_edges()
         self.aliens.update()
 
 
