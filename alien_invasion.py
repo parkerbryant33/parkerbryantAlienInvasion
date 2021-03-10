@@ -59,6 +59,7 @@ class AlienInvasion:
                 self._update_bullets()
                 self._update_aliens()
             self._update_screen()
+
             # Bullet.update(self)
             # Redraw the screen during each pass through the loop.
 
